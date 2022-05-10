@@ -49,6 +49,11 @@ class Color:
         return int(self.alpha_num) / 100
 
     @property
+    def alpha_hex(self):
+        """Export the alpha value as a hex number in [00, ff]."""
+        return "%0.2x" % int(self.alpha_dec * 255)
+
+    @property
     def decimal(self):
         """Export color in decimal."""
         return "%s%s" % ("#", int(self.hex_color[1:], 16))
